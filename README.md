@@ -1,8 +1,7 @@
-# React + Vite
+# MDMA vs Placebo for PTSD treatment
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Inspired by a recent [5 bullet Friday Newsletter](https://go.tim.blog/5-bullet-friday-1/) I wanted to chart out the difference in PTSD remission outcomes between MDMA and Placebo. The data is from a [recent group of scientist](https://www.scientiststatementonptsd.com/) promoting the efficacy of MDMA for PTSD treatment.
 
-Currently, two official plugins are available:
+As the chart highlights, you are 2.8 times more likely to go into remission with MDMA than with a placebo. (40% vs 15% respectively).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![alt text](image-1.png)

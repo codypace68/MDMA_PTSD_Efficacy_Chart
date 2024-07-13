@@ -1,11 +1,6 @@
-import { LineChart, lineElementClasses } from "@mui/x-charts";
+import { LineChart } from "@mui/x-charts";
 import "./App.css";
 import { axisClasses } from "@mui/x-charts/ChartsAxis";
-
-const labels = ["Group A", "Group B", "Group C", "Group D", "Group E"];
-const lData = [42, 24, 56, 45, 3];
-const rData = [57, 7, 19, 16, 22];
-const colors = ["#006BD6", "#EC407A"];
 
 function App() {
   // return an array of values that are reduced by a random amount from the original value to the end value
@@ -21,7 +16,7 @@ function App() {
       }
 
       const randomReduction =
-        Math.random() * (totalReduction / (steps - i * 0.9));
+        Math.random() * (totalReduction / (steps - i * 0.89));
 
       current -= randomReduction;
 
@@ -34,19 +29,37 @@ function App() {
   return (
     <div className="bg-slate-800 rounded-md p-7">
       <h3 className="text-xl text-white">
-        PTSD Remission Rates <small>(MDMA vs. Placebo)</small>
+        PTSD Remission Rates <small>(MDMA vs. Placebo over 12 months)</small>
       </h3>
       <hr className="border-white my-4" />
       <LineChart
         xAxis={[{ data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] }]}
         series={[
           {
-            data: randomReductionToDefined(13, 12, 13 * (1 - 0.4)),
+            data: randomReductionToDefined(0, 12, 13 * 0.4),
             label: "MDMA Treatment",
           },
           {
-            data: randomReductionToDefined(13, 12, 13 * (1 - 0.14)),
+            data: randomReductionToDefined(0, 12, 13 * 0.14),
             label: "Placebo + Therapy",
+          },
+        ]}
+        slotProps={{
+          legend: {
+            labelStyle: {
+              fill: "white",
+            },
+          },
+          yAxis: {
+            labelStyle: {
+              fill: "white",
+            },
+          },
+        }}
+        yAxis={[
+          {
+            label: "Millions of Patients",
+            fill: "white",
           },
         ]}
         colors={["#8884d8", "#82ca9d"]}
